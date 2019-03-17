@@ -86,9 +86,16 @@ public class Endereco {
 
     @Override
     public String toString() {
+
         return "CEP: " + getCep()
                 + "\nLogradouro: " + getLogradouro()
                 + "\nComplemento: " + getComplemento()
-                + "\nBairro: " + getBairro();
+                + "\nBairro: " + getBairro()
+                + "Localidade: " + getLocalidade()
+                + "UF: " + getUf()
+                + "Unidade: " + getUnidade()
+                + "Ibge: " + getIbge()
+                +"Gia: " + getGia();
+
     }
 }
