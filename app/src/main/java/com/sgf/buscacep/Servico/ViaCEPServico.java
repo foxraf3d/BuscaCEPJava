@@ -3,6 +3,7 @@ package com.sgf.buscacep.Servico;
 import android.os.AsyncTask;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sgf.buscacep.Modelo.Endereco;
 import com.sgf.buscacep.R;
 
@@ -15,7 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class ViaCEPServico extends AsyncTask<Void, Void, Endereco> {
+public class ViaCEPServico extends AsyncTask<Void, Void, String> {
 
 
     public static String CEP;
@@ -25,7 +26,7 @@ public class ViaCEPServico extends AsyncTask<Void, Void, Endereco> {
     }
 
     @Override
-    protected Endereco doInBackground(Void... params) {
+    protected String doInBackground(Void... params) {
         StringBuilder resposta = new StringBuilder();
         try {
             URL url = new URL("http://viacep.com.br/ws/"+CEP+"/json/");
@@ -42,7 +43,11 @@ public class ViaCEPServico extends AsyncTask<Void, Void, Endereco> {
                 resposta.append(scanner.next());
             }
 
-            return new Gson().fromJson(resposta.toString(), Endereco.class);
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.setPrettyPrinting();
+            Gson gson = gsonBuilder.create();
+
+            return gson.toJson(resposta);
 
         } catch (IOException e) {
             e.printStackTrace();

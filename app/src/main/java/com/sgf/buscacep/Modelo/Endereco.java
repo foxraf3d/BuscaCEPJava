@@ -84,18 +84,18 @@ public class Endereco {
         this.gia = gia;
     }
 
-    @Override
-    public String toString() {
-
-        return "CEP: " + getCep()
-                + "\nLogradouro: " + getLogradouro()
-                + "\nComplemento: " + getComplemento()
-                + "\nBairro: " + getBairro()
-                + "Localidade: " + getLocalidade()
-                + "UF: " + getUf()
-                + "Unidade: " + getUnidade()
-                + "Ibge: " + getIbge()
-                +"Gia: " + getGia();
-
-    }
+//    @Override
+//    public String toString() {
+//
+//        return "CEP: " + getCep()
+//                + "\nLogradouro: " + getLogradouro()
+//                + "\nComplemento: " + getComplemento()
+//                + "\nBairro: " + getBairro()
+//                + "\nLocalidade: " + getLocalidade()
+//                + "\nUF: " + getUf()
+//                + "\nUnidade: " + getUnidade()
+//                + "\nIbge: " + getIbge()
+//                + "\nGia: " + getGia();
+//
+//    }
 }

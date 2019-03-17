@@ -33,10 +33,9 @@ public class MainActivity extends AppCompatActivity {
         buscarCEP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Endereco endereco;
                 try {
-                    endereco = new ViaCEPServico(CEP.getText().toString()).execute().get();
-                    resultadoCEP.setText(endereco.toString());
+                    String endereco = new ViaCEPServico(CEP.getText().toString()).execute().get();
+                    resultadoCEP.setText(endereco);
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
